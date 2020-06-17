@@ -18,13 +18,20 @@ class usuario{
 
 
 	function CrearUsuario(){
-		$conexion = new mysqli('localhost:3308')
+		$conexion = new mysqli('localhost:3308','root','123456','agenda_db');
+		if($conexion->connect_error){
+			printf('Se ha producido un error en la conexión'. $conexion->connect_error)
+		}else{
+			printf('Conexion Exitosa');
+		}
 	}
 
 
 }
 
 
+$Crear = new usuario();
+printf($Crear->CrearUsuario());
 
 
  ?>
